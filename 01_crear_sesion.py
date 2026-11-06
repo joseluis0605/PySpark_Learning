@@ -18,3 +18,6 @@ lista_columnas = ["pais", "capital"]
 # creamos dataframe
 df = spark.createDataFrame(lista_valores, lista_columnas)
 df.show()
+
+# Cerramos la sesión
+spark.stop()
