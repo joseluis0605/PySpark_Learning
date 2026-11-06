@@ -1,0 +1,40 @@
+Mini-lab: pipeline ETL corto
+
+Objetivo del ejercicio
+En este mini-lab vas a construir un pipeline ETL completo con PySpark, paso a paso. El objetivo es practicar cómo leer, transformar y guardar datos usando las funciones básicas que has aprendido.
+
+Contexto
+Tienes un fichero llamado transactions.csv con las siguientes columnas:
+
++----------------+----------+--------+------------------+---------+
+
+| transaction_id | user_id  | amount | transaction_date | country |
+
++----------------+----------+--------+------------------+---------+
+
+| 1              | 10       | 250.0  | 2024-01-10       | Spain   |
+
+| 2              | 11       | 75.0   | 2024-01-11       | France  |
+
+| 3              | 12       | 130.0  | 2024-02-03       | Spain   |
+
+| 4              | 13       | null   | 2024-02-15       | Italy   |
+
+| 5              | null     | 300.0  | 2024-03-01       | Spain   |
+
++----------------+----------+--------+------------------+---------+
+
+
+Tu tarea
+Crea un pequeño pipeline ETL que haga lo siguiente:
+- Lea el fichero CSV transactions.csv.
+-Limpie los datos eliminando filas con valores nulos en las columnas críticas.
+-Filtre solo las transacciones con amount > 100.
+
+Guarde los resultados en formato Parquet, particionando por country.
+(Opcional) Lee de nuevo el parquet para verificar el resultado.
+
+Reto opcional
+1. Crea una nueva columna llamada amount_usd multiplicando amount * 1.1.
+2. Guarda el resultado particionando por año y mes, extraídos de transaction_date.
+3. Usa pyspark.sql.functions para ello.
